@@ -39,6 +39,15 @@ class Library {
     .map(element=>element.title)
     return `bizde olan kitablarin listi: ${newList}`
   }
+  bigBook(item){
+    let num;
+    this.books.sort((a,b)=>b.pages-a.pages)
+    let newBig= this.books.find((book=>book.title===item))
+    if(newBig){
+        num=this.books.indexOf(newBig)+1
+    }
+    return(`${item} kitabi qalinligina gore ${num} -ci yerdedir`)
+  }
 }
 
 let library = new Library();
@@ -90,7 +99,7 @@ console.log(library.books);
 console.log(library.checkBook("nene"));
 console.log(library.takeBook("To Kill a Mockingbird"))
 console.log(library.listAviables())
-
+console.log(library.bigBook("The Catcher in the Rye"))
 
 // açıqlama 
 // 1)checkbook()- bu funksiya nədir?
